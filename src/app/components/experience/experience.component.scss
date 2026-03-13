@@ -1,0 +1,65 @@
+.timeline-wrapper {
+    position: relative;
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 150px;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: var(--app-gold-soft);
+        opacity: 0.3;
+        display: none;
+    }
+}
+
+.timeline-item {
+    position: relative;
+
+    &:not(:last-child):after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 0;
+        width: 20px;
+        height: 1px;
+        background: var(--app-gold-soft);
+        opacity: 0.3;
+    }
+}
+
+.timeline-number {
+    font-size: 2.5rem;
+    opacity: 0.2;
+    font-weight: 700;
+}
+
+.timeline-icon-box {
+    width: 80px;
+    height: 80px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(197, 160, 89, 0.2);
+}
+
+@media (min-width: 768px) {
+    .timeline-wrapper:before {
+        display: block;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .timeline-item:not(:last-child):after {
+        display: none;
+    }
+
+    .timeline-card {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+}

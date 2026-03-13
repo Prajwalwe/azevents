@@ -1,0 +1,35 @@
+.social-link {
+    color: white;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+
+    &:hover {
+        color: var(--app-gold-soft);
+        opacity: 1;
+        transform: translateY(-3px);
+    }
+}
+
+.footer-links {
+    a {
+        color: white;
+        text-decoration: none;
+        opacity: 0.6;
+        font-size: 0.85rem;
+        transition: all 0.3s ease;
+
+        &:hover {
+            opacity: 1;
+            padding-left: 5px;
+            color: var(--app-gold-soft);
+        }
+    }
+}
+
+.ls-2 {
+    letter-spacing: 2px;
+}
+
+.btn-premium.btn-sm {
+    padding: 8px 20px;
+}

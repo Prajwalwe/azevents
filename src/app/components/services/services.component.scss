@@ -1,0 +1,48 @@
+.service-card {
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    background: #fff;
+
+    &:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1) !important;
+
+        .service-img {
+            transform: scale(1.1);
+        }
+    }
+}
+
+.service-image-wrapper {
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+}
+
+.service-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+.service-icon-box {
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+.ls-2 {
+    letter-spacing: 2px;
+}
+
+.bg-gold-soft {
+    background-color: var(--app-gold-soft);
+}

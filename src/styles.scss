@@ -1,0 +1,109 @@
+@import "bootstrap/scss/bootstrap";
+
+// Design System Variables
+$cream: #F9F7F2;
+$charcoal: #333333;
+$gold-soft: #C5A059;
+$gold-deep: #A6823B;
+$slate: #707070;
+
+$font-heading: 'Playfair Display', serif;
+$font-body: 'Inter', sans-serif;
+
+:root {
+    --app-cream: #{$cream};
+    --app-charcoal: #{$charcoal};
+    --app-gold-soft: #{$gold-soft};
+    --app-gold-deep: #{$gold-deep};
+    --app-slate: #{$slate};
+}
+
+body {
+    font-family: $font-body;
+    background-color: $cream;
+    color: $charcoal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.display-font {
+    font-family: $font-heading;
+    font-weight: 700;
+}
+
+// Custom Utility Classes
+.text-gold {
+    color: $gold-soft !important;
+}
+
+.bg-cream {
+    background-color: $cream;
+}
+
+.bg-charcoal {
+    background-color: $charcoal;
+    color: white;
+}
+
+.btn-premium {
+    background-color: $gold-soft;
+    color: white;
+    border-radius: 0;
+    padding: 12px 30px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    border: 1px solid $gold-soft;
+
+    &:hover {
+        background-color: transparent;
+        color: $gold-soft;
+    }
+}
+
+.btn-outline-premium {
+    background-color: transparent;
+    color: $gold-soft;
+    border-radius: 0;
+    padding: 12px 30px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    border: 1px solid $gold-soft;
+
+    &:hover {
+        background-color: $gold-soft;
+        color: white;
+    }
+}
+
+.section-padding {
+    padding: 100px 0;
+}
+
+.high-whitespace {
+    letter-spacing: 0.05em;
+    line-height: 1.8;
+}
+
+// Fade-in animation
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.8s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

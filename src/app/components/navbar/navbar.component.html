@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-lg fixed-top px-lg-5 py-3" [class.bg-white]="isMobileMenuOpen() || true"
+    [class.shadow-sm]="true">
+    <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+            <lucide-icon [img]="CalendarIcon" class="text-gold me-2"></lucide-icon>
+            <span class="display-font fs-4 fw-bold text-charcoal">A-Z EVENTS</span>
+        </a>
+
+        <button class="navbar-toggler border-0 shadow-none" type="button" (click)="toggleMenu()">
+            <lucide-icon [img]="isMobileMenuOpen() ? XIcon : MenuIcon" class="text-charcoal"></lucide-icon>
+        </button>
+
+        <div class="collapse navbar-collapse" [class.show]="isMobileMenuOpen()">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+                <li class="nav-item mx-lg-3">
+                    <a class="nav-link text-uppercase fs-7 fw-medium" href="#services">Services</a>
+                </li>
+                <li class="nav-item mx-lg-3">
+                    <a class="nav-link text-uppercase fs-7 fw-medium" href="#experience">Process</a>
+                </li>
+                <li class="nav-item mx-lg-3">
+                    <a class="nav-link text-uppercase fs-7 fw-medium" href="#about">About</a>
+                </li>
+                <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+                    <a class="btn btn-premium px-4" href="#booking">Book Inquiry</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

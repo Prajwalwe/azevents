@@ -1,0 +1,92 @@
+<section id="booking" class="section-padding bg-white">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="booking-card shadow-lg p-0 overflow-hidden">
+                    <div class="row g-0">
+                        <div class="col-md-5 bg-charcoal p-5 text-white d-flex flex-column justify-content-center">
+                            <h6 class="text-gold text-uppercase ls-2 mb-3">Get in Touch</h6>
+                            <h2 class="display-font mb-4">Request a Quote</h2>
+                            <p class="text-light opacity-75 mb-5 high-whitespace small">Tell us about your event, and
+                                our dedicated coordinators will reach out to craft the perfect experience for you.</p>
+
+                            <div class="contact-info mt-auto">
+                                <div class="d-flex align-items-center mb-3">
+                                    <div class="ms-0 text-gold me-3">Office:</div>
+                                    <div class="small">123 Elegance Lane, Heritage Square</div>
+                                </div>
+                                <div class="d-flex align-items-center mb-3">
+                                    <div class="ms-0 text-gold me-3">Email:</div>
+                                    <div class="small">concierge&#64;a-zevents.com</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-7 p-5 bg-white">
+                            <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()">
+                                <div class="row g-4">
+                                    <div class="col-md-6">
+                                        <label class="form-label small text-uppercase fw-bold text-charcoal ls-1">Full
+                                            Name</label>
+                                        <input type="text" class="form-control custom-input" formControlName="fullName"
+                                            placeholder="John Doe">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label small text-uppercase fw-bold text-charcoal ls-1">Email
+                                            Address</label>
+                                        <input type="email" class="form-control custom-input" formControlName="email"
+                                            placeholder="john&#64;example.com">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label small text-uppercase fw-bold text-charcoal ls-1">Event
+                                            Type</label>
+                                        <select class="form-select custom-input text-slate" formControlName="eventType">
+                                            <option value="">Select Event Type</option>
+                                            <option value="wedding">Wedding</option>
+                                            <option value="pooja">Sacred Ceremony</option>
+                                            <option value="catering">Gourmet Catering</option>
+                                            <option value="corporate">Corporate Event</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label small text-uppercase fw-bold text-charcoal ls-1">Event
+                                            Date</label>
+                                        <input type="date" class="form-control custom-input"
+                                            formControlName="eventDate">
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label small text-uppercase fw-bold text-charcoal ls-1">Your
+                                            Vision</label>
+                                        <textarea class="form-control custom-input" rows="4" formControlName="vision"
+                                            placeholder="Tell us about your requirements..."></textarea>
+                                    </div>
+                                    <div class="col-12 mt-4">
+                                        <button type="submit"
+                                            class="btn btn-premium w-100 d-flex align-items-center justify-content-center"
+                                            [disabled]="bookingService.loading()">
+                                            <span *ngIf="!bookingService.loading()">Send Inquiry <lucide-icon
+                                                    [img]="SendIcon" size="18" class="ms-2"></lucide-icon></span>
+                                            <span *ngIf="bookingService.loading()"
+                                                class="spinner-border spinner-border-sm" role="status"></span>
+                                        </button>
+
+                                        <div *ngIf="bookingService.success()"
+                                            class="alert alert-success mt-4 border-0 rounded-0 slide-up">
+                                            Thank you! Your inquiry has been sent successfully. We will contact you
+                                            shortly.
+                                        </div>
+
+                                        <div *ngIf="bookingService.error()"
+                                            class="alert alert-danger mt-4 border-0 rounded-0 slide-up">
+                                            {{ bookingService.error() }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

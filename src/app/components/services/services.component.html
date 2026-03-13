@@ -1,0 +1,30 @@
+<section id="services" class="section-padding bg-white">
+    <div class="container">
+        <div class="text-center mb-5 fade-in">
+            <h6 class="text-gold text-uppercase ls-2 mb-2 fw-semibold">Our Offerings</h6>
+            <h2 class="display-5 text-charcoal mb-4">A-Z Event Solutions</h2>
+            <div class="mx-auto bg-gold-soft mb-4" style="width: 60px; height: 2px;"></div>
+            <p class="lead text-slate col-md-8 mx-auto high-whitespace">From the initial ritual to the final reception,
+                we provide end-to-end management with a focus on luxury and tradition.</p>
+        </div>
+
+        <div class="row g-4">
+            <div *ngFor="let service of services; let i = index" class="col-md-6 col-lg-3 fade-in"
+                [style.animation-delay]="i * 0.2 + 's'">
+                <div class="service-card h-100 border-0 shadow-sm overflow-hidden p-0">
+                    <div class="service-image-wrapper">
+                        <img [src]="service.image || 'assets/images/hero.png'" [alt]="service.title"
+                            class="service-img">
+                        <div class="service-icon-box bg-white shadow">
+                            <lucide-icon [img]="service.icon" class="text-gold" size="24"></lucide-icon>
+                        </div>
+                    </div>
+                    <div class="p-4 pt-5 text-center">
+                        <h4 class="h5 mb-3 text-charcoal">{{ service.title }}</h4>
+                        <p class="text-slate small high-whitespace mb-0">{{ service.description }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

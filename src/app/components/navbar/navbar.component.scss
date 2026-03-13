@@ -1,0 +1,42 @@
+.navbar {
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+}
+
+.nav-link {
+    color: var(--app-charcoal);
+    letter-spacing: 1px;
+    position: relative;
+
+    &:after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 1px;
+        bottom: 5px;
+        left: 8px;
+        background-color: var(--app-gold-soft);
+        transition: width 0.3s ease;
+    }
+
+    &:hover:after {
+        width: calc(100% - 16px);
+    }
+}
+
+.fs-7 {
+    font-size: 0.85rem;
+}
+
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        background: white;
+        padding: 1rem;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+}
